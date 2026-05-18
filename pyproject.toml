@@ -1,0 +1,33 @@
+[project]
+name = "gemini-splunk-agent"
+version = "0.1.0"
+description = "Production observability + incident investigation agent on Google Cloud Agent Builder (ADK) + Gemini + the Splunk MCP server. Submission for Splunk Agentic Ops Hackathon (Observability track)."
+readme = "README.md"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Mukunda Katta" }]
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform[agent_engines]>=1.112.0",
+    "mcp>=1.0.0",
+    "streamlit>=1.40.0",
+    "pandas>=2.2.0",
+    "geminilens @ git+https://github.com/MukundaKatta/geminilens@main",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.24.0",
+    "ruff>=0.6.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/MukundaKatta/gemini-splunk-agent"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
